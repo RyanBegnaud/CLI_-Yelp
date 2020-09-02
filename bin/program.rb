@@ -8,10 +8,11 @@ class Program
         User.get_input 
         a = YelpApi.search(User.food, User.zip)
         Sort.businesses(a)
-        Sort.sort
         Display.display
+        Program.new_search
+    end
         
-       
+    def self.new_search  
         puts "\nWould you like to search again?(Type 'yes' for yes) and (hit 'enter' for no)"
         user_input = gets.strip  
     
@@ -19,7 +20,7 @@ class Program
             Sort.all.clear
             Program.run
         end
-     end
+    end
 end
 
 Program.run
