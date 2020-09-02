@@ -1,16 +1,11 @@
-require "open-uri"
-require "json"
 require "http"
 
 class YelpApi
-    attr_accessor :limit, :location, :term 
-   
   API_KEY = "r-XGP4L-bDEy3qbR_RXAYsQMEReOcZyNh1BTOy5g7z8PJhVt5oN26x0VU17Y2W42fsSmI2ySOT-aV6gKfxVhzjopkerGXZJQ8ADhMMMm0hrnh3XD5N7HHIeajsQ6X3Yx"
   API_HOST = "https://api.yelp.com/v3/businesses/search"
   
   def self.search(term = "food", location)
-  
-    params = {
+     params = {
         term: term,
         location: location,
         limit: 5
