@@ -1,18 +1,17 @@
 class User
-    attr_accessor :zip, :food 
-   
+    
     @@food = "food"
-    @@zip = "11111"
+    @@zip = ""
     
     def self.get_input
         puts "Please enter the 5 digit area code where you would like to look for food!"
-        @zipcode_input = gets.strip 
-        test = valid
+        @@zip = gets.strip 
+        test = self.valid
         
         while test != true 
             puts "Invalid entry, Please enter the 5 digit area code where you would like to look for food!"
-            @zipcode_input = gets.strip  
-            test = valid
+            @@zip = gets.strip  
+            test = self.valid
         end
 
         if test == true 
@@ -20,12 +19,10 @@ class User
             @food_yes_no = gets.strip 
             self.food_search 
         end
-
     end
 
     def self.valid
-        if @zipcode_input.length == 5
-            @@zip = @zipcode_input
+        if @@zip.length == 5
             true 
         else 
             false 
@@ -46,7 +43,6 @@ class User
         @@food
     end
     
-
     def self.zip 
         @@zip 
     end 
